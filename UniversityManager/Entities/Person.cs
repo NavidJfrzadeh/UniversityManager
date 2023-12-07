@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace UniversityManager.Entities
 {
-    public class Person
+    public class Person:BaseEntity
     {
         public Guid id { get; set; }
         public bool isDeleted { get; set; }

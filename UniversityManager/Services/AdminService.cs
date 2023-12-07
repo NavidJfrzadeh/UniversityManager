@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace UniversityManager.Entities
+namespace UniversityManager.Services
 {
-    public class Course:BaseEntity
+    internal class AdminService
     {
-        public string Name { get; set; }
     }
 }
