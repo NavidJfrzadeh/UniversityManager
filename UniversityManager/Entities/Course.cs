@@ -9,5 +9,6 @@ namespace UniversityManager.Entities
     public class Course:BaseEntity
     {
         public string Name { get; set; }
+        public bool IsDeleted { get; set; }
     }
 }
