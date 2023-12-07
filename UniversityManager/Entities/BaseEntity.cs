@@ -6,13 +6,9 @@ using System.Threading.Tasks;
 
 namespace UniversityManager.Entities
 {
-    public class Student:Person
+    public class BaseEntity
     {
-        public Student()
-        {
-            courses = new List<Course>();
-        }
+        public string Id { get; set; }
 
-        public List<Course> courses { get; set; }
     }
 }
