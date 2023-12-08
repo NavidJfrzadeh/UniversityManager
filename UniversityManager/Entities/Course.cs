@@ -6,9 +6,12 @@ using System.Threading.Tasks;
 
 namespace UniversityManager.Entities
 {
-    public class Course:BaseEntity
+    public class Course : BaseEntity
     {
-        public string Name { get; set; }
-        public bool IsDeleted { get; set; }
+        public Course()
+        {
+            id = Guid.NewGuid();
+        }
+        public bool IsDeleted { get; set; } = false;
     }
 }

@@ -14,13 +14,13 @@ namespace UniversityManager.Services
         List<Student> _students;
         GenericRepository<Student> studentRepository;
         GenericRepository<Course> courseRepository;
-        StudentService(string studentFilePath, string courseFilePath)
+        public StudentService(string studentFilePath, string courseFilePath)
         {
             studentRepository = new GenericRepository<Student>(studentFilePath);
             courseRepository = new GenericRepository<Course>(courseFilePath);
             _students = studentRepository.GetAll();
-
-        }        
+            _courses = courseRepository.GetAll();
+        }
         public List<Course> GetAllCourse()
         {
             return _courses;
@@ -36,11 +36,13 @@ namespace UniversityManager.Services
                 return new List<Course>();
             }
         }
-        public bool TakeCourse(Guid studentId, Course course)
+        public bool TakeCourse(Guid studentId, string courseName)
         {
             try
             {
+                var course = _courses.FirstOrDefault(x => x.name == courseName);
                 _students.FirstOrDefault(s => s.id == studentId).courses.Add(course);
+                Console.WriteLine("course added...");
                 return true;
             }
             catch
@@ -48,6 +50,6 @@ namespace UniversityManager.Services
                 return false;
             }
         }
-        
+
     }
 }

@@ -31,7 +31,7 @@ namespace UniversityManager.Utilities
             }
         }
 
-        public bool Delete(string id)
+        public bool Delete(Guid id)
         {
             try
             {
@@ -60,8 +60,8 @@ namespace UniversityManager.Utilities
         {
             try
             {
-                var newItem = _items.FirstOrDefault(p => p.Id == entity.Id);
-                newItem.Id = "0";
+                var newItem = _items.FirstOrDefault(p => p.id == entity.id);
+                //newItem.id = Guid.NewGuid();
                 SaveChanges();
 
                 return newItem;
@@ -74,9 +74,9 @@ namespace UniversityManager.Utilities
 
         }
 
-        public T GetByID(string id)
+        public T GetByID(Guid Id)
         {
-            return _items.FirstOrDefault(x => x.Id == id);
+            return _items.FirstOrDefault(x => x.id == Id);
         }
     }
 }

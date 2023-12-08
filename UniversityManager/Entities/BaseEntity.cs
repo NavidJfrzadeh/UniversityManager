@@ -8,8 +8,7 @@ namespace UniversityManager.Entities
 {
     public class BaseEntity
     {
-        public string Id { get; set; }
-       
-
+        public Guid id { get; set; }
+        public string name { get; set; }
     }
 }
